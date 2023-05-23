@@ -23,7 +23,7 @@ function Sidebar({ showMenu, setShowMenu, node, name, navLinks }) {
     //   return "bg-custom-blue5 text-white";
     // }
 
-    return "text-custom-blue2 hover:text-white hover:bg-custom-blue5";
+    return "text-custom-blue2 hover:text-white hover:bg-custom-blue5/50";
   };
 
   const activeSubLinkClass = (navLink, i) => {
@@ -36,7 +36,7 @@ function Sidebar({ showMenu, setShowMenu, node, name, navLinks }) {
       return "bg-custom-blue5 text-white";
     }
 
-    return "text-custom-blue2 hover:text-white hover:bg-custom-blue5";
+    return "text-custom-blue2 hover:text-white hover:bg-custom-blue5/50";
   };
 
   const menu = (index) => {
@@ -46,13 +46,13 @@ function Sidebar({ showMenu, setShowMenu, node, name, navLinks }) {
     setShowSubMenu(index);
   };
 
-  // useEffect(() => {
-  //   if (showMenu) {
-  //     document.body.classList.add("overflow-y-hidden");
-  //   }
+  useEffect(() => {
+    if (showMenu) {
+      document.body.classList.add("overflow-y-hidden");
+    }
 
-  //   return () => document.body.classList.remove("overflow-y-hidden");
-  // }, [showMenu]);
+    return () => document.body.classList.remove("overflow-y-hidden");
+  }, [showMenu]);
 
   return (
     <div
@@ -66,12 +66,12 @@ function Sidebar({ showMenu, setShowMenu, node, name, navLinks }) {
     >
       <div
         ref={node}
-        className={`h-screen bg-custom-blue z-30 top-0 bottom-0 fixed lg:sticky sidebar text-white lg:translate-x-0 w-[264px] ease-out duration-300 ${
+        className={`h-screen overflow-y-scroll bg-custom-blue z-30 top-0 bottom-0 fixed lg:sticky sidebar text-white lg:translate-x-0 w-[264px] ease-out duration-300 ${
           showMenu ? "translate-x-0" : "-translate-x-full"
         }
       `}
       >
-        <div className=" items-center gap-10">
+        <div className="">
           <div className="text-white py-[16px] font-semibold flex justify-between items-center">
             <h1 className="pl-6 text-xl lg:text-2xl">SMS Dashboard</h1>
             <span
@@ -136,7 +136,7 @@ function Sidebar({ showMenu, setShowMenu, node, name, navLinks }) {
                             className={`text-sm px-14 py-3 flex justify-between items-center font-semibold transition duration-300 rounded-md ${
                               router.pathname === subLink.link
                                 ? "bg-custom-blue5 text-white"
-                                : "text-custom-blue2 hover:text-white hover:bg-custom-blue5"
+                                : "text-custom-blue2 hover:text-white hover:bg-custom-blue5/50"
                             }`}
                           >
                             {subLink.name}
