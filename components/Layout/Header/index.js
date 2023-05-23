@@ -27,8 +27,8 @@ function Header({ showMenu, setShowMenu }) {
             <Bars3Icon className="h-8 w-8" />
           </div>
 
-          <div className="text-xl text-custom-blue4 font-bold lg:hidden">
-            Shannon Links
+          <div className="text-xl mx-auto text-custom-blue4 font-bold lg:hidden">
+            SMS Dashboard
           </div>
 
           <div className="flex justify-between items-center gap-5 lg:gap-[80px]">
