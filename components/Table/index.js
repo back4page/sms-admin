@@ -8,7 +8,7 @@ import {
   useRowSelect,
 } from "react-table";
 import { GlobalFilter } from "./GlobalFilter";
-import useToggle from "@/hooks/useToggle";
+// import useToggle from "@/hooks/useToggle";
 import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
@@ -22,15 +22,15 @@ function Table({ columnsHeading, usersData }) {
 
   const data = useMemo(() => usersData, [usersData]);
 
-  const { togggle: active, setToggle: setActive, node } = useToggle();
+  // const { togggle: active, setToggle: setActive, node } = useToggle();
 
-  const showMenu = (i) => {
-    if (active === i) {
-      return setActive(null);
-    }
+  // const showMenu = (i) => {
+  //   if (active === i) {
+  //     return setActive(null);
+  //   }
 
-    setActive(i);
-  };
+  //   setActive(i);
+  // };
 
   const {
     getTableProps,
@@ -150,9 +150,10 @@ function Table({ columnsHeading, usersData }) {
                 <tr
                   key={i}
                   {...row.getRowProps()}
-                  className={`hover:bg-cyan-50 transition duration-200 ${
-                    active === i && "bg-cyan-50"
-                  }`}
+                  className={"hover:bg-cyan-50 transition duration-200"}
+                  // className={`hover:bg-cyan-50 transition duration-200 ${
+                  //   active === i && "bg-cyan-50"
+                  // }`}
                 >
                   {row.cells.map((cell, i) => {
                     return (

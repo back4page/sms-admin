@@ -1,4 +1,4 @@
-import { HomeIcon } from "@heroicons/react/24/solid";
+import { ChartPieIcon } from "@heroicons/react/24/solid";
 import PageWrapper from "@/components/Wrappers/PageWrapper";
 import Cards from "../components/Cards";
 // import { useSession } from "next-auth/react";
@@ -9,7 +9,7 @@ function HomePage() {
   // console.log("session", session);
 
   return (
-    <PageWrapper title="Dashboard" icon={<HomeIcon />}>
+    <PageWrapper title="Dashboard" icon={<ChartPieIcon />}>
       <div className="grid lg:grid-cols-3 gap-8 md:grid-cols-2 ">
         <Cards />
       </div>

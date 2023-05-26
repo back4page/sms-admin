@@ -1,6 +1,6 @@
 import { LoaderContent } from "../Loaders/LoaderContent";
 
-function PageWrapper({ icon, title, children }) {
+function PageWrapper({ icon, title, isLoading, children }) {
   return (
     <div className="relative">
       <div className="flex items-center gap-3">
@@ -8,7 +8,7 @@ function PageWrapper({ icon, title, children }) {
         <h1 className="text-2xl font-bold text-custom-gray2">{title}</h1>
       </div>
 
-      {/* <LoaderContent /> */}
+      {isLoading && <LoaderContent />}
 
       <div className="mt-7">{children}</div>
     </div>

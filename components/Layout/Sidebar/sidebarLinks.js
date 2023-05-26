@@ -1,17 +1,17 @@
 import {
-  HomeIcon,
   UsersIcon,
   CurrencyDollarIcon,
   CircleStackIcon,
   Cog6ToothIcon,
   ListBulletIcon,
+  ChartPieIcon,
 } from "@heroicons/react/24/solid";
 
 export const sidebarLinks = [
   {
     name: "Dashboard",
     link: "/",
-    icon: <HomeIcon />,
+    icon: <ChartPieIcon />,
   },
   {
     name: "Users",
@@ -56,6 +56,10 @@ export const sidebarLinks = [
       {
         name: "Create Package",
         link: "/database/create-package",
+      },
+      {
+        name: "All Packages",
+        link: "/database/all-packages",
       },
     ],
   },
