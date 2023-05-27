@@ -1,22 +1,9 @@
 import { Form, Formik } from "formik";
-// import usePostData from "../../hooks/usePostData";
-
 import { useRouter } from "next/router";
 import { TextField } from "../InputFields";
 
 function UserForm({ id }) {
-  // const { data: session } = useSession();
-  // const { id, username, admin, adminId } = session ? session.user : "";
-
-  // console.log("form", data);
-
-  // const id = data?.user?.id;
-
-  // const adminId = data?.user?.adminId;
-
   const router = useRouter();
-
-  // const { postData } = usePostData("/admin/add");
 
   const initialvalues = {
     company_name: "",
@@ -31,14 +18,9 @@ function UserForm({ id }) {
 
   return (
     <div className="mt-7">
-      <Formik
-        initialValues={initialvalues}
-        onSubmit={handleSubmit}
-        // enableReinitialize
-      >
+      <Formik initialValues={initialvalues} onSubmit={handleSubmit}>
         {(formik) => (
           <Form>
-            {/* <h1 className="text-lg font-semibold ">Add New User</h1> */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-5 md:gap-y-7">
               <TextField
                 label="Company Name *"

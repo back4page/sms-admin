@@ -219,28 +219,28 @@ function Table({ columnsHeading, usersData }) {
 
         <div className="flex gap-1">
           <button
-            className="p-1 text-sm rounded-sm bg-cyan-300 disabled:opacity-50"
+            className="p-1 text-sm rounded-sm bg-cyan-300 active:bg-cyan-400 disabled:opacity-50 disabled:active:bg-cyan-300 disabled:cursor-not-allowed"
             onClick={() => gotoPage(0)}
             disabled={!canPreviousPage}
           >
             <ChevronDoubleLeftIcon className="h-4 w-4" />
           </button>
           <button
-            className="bg-cyan-300 active:bg-cyan-400 px-3 py-1 rounded-sm text-sm disabled:opacity-50"
+            className="bg-cyan-300 active:bg-cyan-400 px-3 py-1 rounded-sm text-sm disabled:opacity-50 disabled:active:bg-cyan-300 disabled:cursor-not-allowed"
             onClick={() => previousPage()}
             disabled={!canPreviousPage}
           >
             Previous
           </button>
           <button
-            className="bg-cyan-300 active:bg-cyan-400 px-3 py-1 rounded-sm text-sm disabled:opacity-50"
+            className="bg-cyan-300 active:bg-cyan-400 px-3 py-1 rounded-sm text-sm disabled:opacity-50 disabled:active:bg-cyan-300 disabled:cursor-not-allowed"
             onClick={() => nextPage()}
             disabled={!canNextPage}
           >
             Next
           </button>
           <button
-            className="p-1 text-sm rounded-sm  bg-cyan-300 disabled:opacity-50"
+            className="p-1 text-sm rounded-sm bg-cyan-300 active:bg-cyan-400 disabled:opacity-50 disabled:active:bg-cyan-300 disabled:cursor-not-allowed"
             onClick={() => gotoPage(pageCount - 1)}
             disabled={!canNextPage}
           >

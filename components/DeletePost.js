@@ -1,7 +1,7 @@
-import useDeleteData from "@/hooks/useDeleteData";
-import { useSession } from "next-auth/react";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 import { toast } from "react-hot-toast";
+import useDeleteData from "@/hooks/useDeleteData";
 
 function DeletePost({ packageInfo }) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -9,11 +9,8 @@ function DeletePost({ packageInfo }) {
   const { data: session } = useSession();
   const userId = session?.user?.id;
 
-  // console.log("packageInfo", packageInfo);
-
-  const { mutate, isLoading, isSuccess, isError, error } = useDeleteData({
+  const { mutate, isLoading } = useDeleteData({
     path: `/sms/package/delete/${userId}`,
-    // path: `/sms/package/delete/${userId}/${packageInfo.id}/`,
     revalidate: "/sms/package/get",
   });
 
@@ -34,9 +31,6 @@ function DeletePost({ packageInfo }) {
         toast.error(error.response.data.message, {
           id: toastPackageDelete,
         });
-        // toast.error("Something went wrong", {
-        //   id: toastPackageDelete,
-        // });
       },
       onSettled: () => {
         setShowDeleteModal(false);

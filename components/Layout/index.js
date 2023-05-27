@@ -16,6 +16,8 @@ function Layout({ children }) {
   const { pathname } = useRouter();
   const { data: session } = useSession();
 
+  // console.log("session", session);
+
   if (pathname === "/sign-in") {
     return <>{children}</>;
   }

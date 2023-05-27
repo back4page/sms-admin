@@ -1,45 +1,45 @@
 import Card from "./Card";
 
-function Cards() {
+function Cards({ allCounts }) {
   const cardList = [
     {
       title: "Balance",
-      count: 10,
+      count: "---",
       link: "/#balance",
     },
     {
       title: "User Balance",
-      count: 20,
+      count: "---",
       link: "/#user-balance",
     },
     {
       title: "Total Account",
-      count: 30,
+      count: allCounts?.total_user,
       link: "/#total-account",
     },
     {
       title: "Today Sell",
-      count: 40,
+      count: "---",
       link: "/#today-sell",
     },
     {
       title: "Monthly Sell",
-      count: 40,
+      count: "---",
       link: "/#monthly-sell",
     },
     {
       title: "Today SMS Sent",
-      count: 40,
+      count: allCounts?.today_sent,
       link: "/#today-sms-sent",
     },
     {
       title: "This Month SMS Sent",
-      count: 40,
+      count: allCounts?.monthly_sent,
       link: "/#this-month-sms-sent",
     },
     {
       title: "Total Sent",
-      count: 40,
+      count: allCounts?.total_sent,
       link: "/#total-sent",
     },
   ];

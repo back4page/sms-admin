@@ -1,4 +1,3 @@
-//with tanstack-query
 import { useSession } from "next-auth/react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -12,16 +11,6 @@ function useGetData({ path }) {
   const token = session?.user?.token;
 
   const fetcher = async () => {
-    // const res = await fetch(url, {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     // Authorization: `Bearer ${token}`,
-    //   },
-    // });
-    // const fetchedData = await res.json();
-
-    // console.log("fetched", fetchedData);
-    // return fetchedData;
     const config = {
       headers: {
         "Content-Type": "application/json",

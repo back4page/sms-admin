@@ -13,7 +13,6 @@ function Header({ showMenu, setShowMenu }) {
 
   const handleSignout = () => {
     signout();
-    // console.log("sign out clicked");
   };
 
   return (
@@ -33,11 +32,8 @@ function Header({ showMenu, setShowMenu }) {
 
           <div className="flex justify-between items-center gap-5 lg:gap-[80px]">
             <div className="hidden lg:flex justify-between items-center gap-12 text-custom-gray2 text-base font-semibold">
-              {/* <p className="">Username: {username}</p>
-              <p className="">Role : {admin ? "Admin" : "Poster"}</p> */}
               <p className="">Signed in as Admin</p>
             </div>
-            {/* <Notification /> */}
 
             <button
               className="hidden lg:block bg-custom-blue5 hover:bg-opacity-80 active:scale-95 text-sm text-white font-semibold px-2 py-1 lg:px-4 lg:py-2 rounded-lg transition duration-200"
@@ -64,8 +60,6 @@ function Header({ showMenu, setShowMenu }) {
         className={`lg:hidden flex flex-col items-center bg-custom-blue5 absolute top-[68px] w-full py-7 text-sm text-white font-semibold shadow-md ease-out duration-300 z-10
             ${toggle ? "translate-y-0" : "-translate-y-full shadow-none"}`}
       >
-        {/* <p className="py-3">Username: {username}</p>
-        <p className="py-3">Role : {admin ? "Admin" : "Poster"}</p> */}
         <p className="py-3">Signed in as Admin</p>
         <button
           type="button"

@@ -11,13 +11,15 @@ function AllPackagesPage() {
 
   // console.log("data", data);
 
+  // console.log("error", isError);
+
   const packagesData = data?.data;
 
   return (
     <PageWrapper
       title="All Packages"
-      icon={<CircleStackIcon />}
       isLoading={isLoading}
+      icon={<CircleStackIcon />}
     >
       {packagesData && (
         <Table columnsHeading={PackagesColumn} usersData={packagesData} />

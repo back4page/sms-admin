@@ -1,24 +1,11 @@
-import { Form, Formik } from "formik";
-// import usePostData from "../../hooks/usePostData";
-
 import { useRouter } from "next/router";
-import { TextField } from "../InputFields";
-import usePostData from "@/hooks/usePostData";
+import { Form, Formik } from "formik";
 import { toast } from "react-hot-toast";
+import usePostData from "@/hooks/usePostData";
+import { TextField } from "../InputFields";
 
 function CreatePackageForm({ id }) {
-  // const { data: session } = useSession();
-  // const { id, username, admin, adminId } = session ? session.user : "";
-
-  // console.log("form", data);
-
-  // const id = data?.user?.id;
-
-  // const adminId = data?.user?.adminId;
-
   const router = useRouter();
-
-  // const { postData } = usePostData("/admin/add");
 
   const initialvalues = {
     name: "",
@@ -26,11 +13,9 @@ function CreatePackageForm({ id }) {
     no_of_sms: "",
   };
 
-  const { mutate, isLoading, isError, error, isSuccess } = usePostData({
+  const { mutate, isLoading } = usePostData({
     path: `/sms/package/add/${id}`,
     revalidate: "/sms/package/get",
-    // onSuccess,
-    // onError,
   });
 
   const handleSubmit = (values, formik) => {
@@ -57,11 +42,7 @@ function CreatePackageForm({ id }) {
 
   return (
     <div className="mt-7">
-      <Formik
-        initialValues={initialvalues}
-        onSubmit={handleSubmit}
-        // enableReinitialize
-      >
+      <Formik initialValues={initialvalues} onSubmit={handleSubmit}>
         {(formik) => (
           <Form>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-5 md:gap-y-7">
