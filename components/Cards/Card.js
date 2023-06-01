@@ -19,7 +19,7 @@ function Card({ title, count, link }) {
             )} */}
             <div className="flex  items-center">
               {/* <TbCurrencyTaka /> */}
-              <p className="">{count}</p>
+              <p className="">{count ?? "---"}</p>
             </div>
           </div>
           <div className="flex justify-end items-center gap-1 text-gray-400 text-sm font-semibold group-hover:underline underline-offset-2">

@@ -14,27 +14,27 @@ function Cards({ allCounts }) {
     },
     {
       title: "Total Account",
-      count: allCounts?.total_user || "---",
+      count: allCounts?.total_user,
       link: "/#total-account",
     },
     {
       title: "Today Sell",
-      count: allCounts?.today_sell || "---",
+      count: allCounts?.today_sell,
       link: "/#today-sell",
     },
     {
       title: "Monthly Sell",
-      count: allCounts?.monthly_sell || "---",
+      count: allCounts?.monthly_sell,
       link: "/#monthly-sell",
     },
     {
       title: "Today SMS Sent",
-      count: allCounts?.today_sent || "---",
+      count: allCounts?.today_sent,
       link: "/#today-sms-sent",
     },
     {
       title: "This Month SMS Sent",
-      count: allCounts?.monthly_sent || "---",
+      count: allCounts?.monthly_sent,
       link: "/#this-month-sms-sent",
     },
     {

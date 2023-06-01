@@ -1,8 +1,4 @@
 import { Formik, Form } from "formik";
-
-// import useAdminLogin from "../../hooks/useAdminLogin";
-
-// import { Loader2 } from "../../components/Loader";
 import HeadSection from "@/components/Layout/HeadSection";
 import { PasswordField, TextField } from "@/components/InputFields";
 import useSignin from "@/hooks/useSignin";
@@ -67,36 +63,11 @@ function AdminSigninPage() {
                 </Form>
               )}
             </Formik>
-            {/* <div className="mt-5">
-              <Link
-                href="/forgot-password"
-                className="text-sm text-blue-400 hover:text-blue-900"
-              >
-                Forgot Password?
-              </Link>
-            </div> */}
           </div>
         </div>
       </div>
     </>
   );
 }
-
-// export async function getServerSideProps(context) {
-//   const session = await getSession(context);
-
-//   if (session) {
-//     return {
-//       redirect: {
-//         destination: "/",
-//         permanent: false,
-//       },
-//     };
-//   }
-
-//   return {
-//     props: {},
-//   };
-// }
 
 export default AdminSigninPage;

@@ -63,7 +63,7 @@
 
 // export default NextAuth(authOptions);
 
-//with axios
+// //with axios
 import { API_URL } from "@/config";
 import axios from "axios";
 import NextAuth from "next-auth/next";
@@ -75,7 +75,8 @@ export const authOptions = {
       name: "Credentials",
 
       authorize: async (credentials) => {
-        const { ...values } = credentials;
+        // const { ...values } = credentials;
+        const { email, password } = credentials;
 
         const url = `${API_URL}/sms/admin/login`;
 
@@ -83,6 +84,11 @@ export const authOptions = {
           headers: {
             "Content-Type": "application/json",
           },
+        };
+
+        const values = {
+          email,
+          password,
         };
 
         return (
@@ -99,6 +105,10 @@ export const authOptions = {
       },
     }),
   ],
+
+  // session: {
+  //   maxAge: 60 * 60 * 24, // Maximum age of 24 hours (in seconds)
+  // },
 
   pages: {
     signIn: "/sign-in",

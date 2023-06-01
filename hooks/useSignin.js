@@ -10,7 +10,7 @@
 
 //     const response = await signIn("credentials", {
 //       ...values,
-//       // callbackUrl: `${window.location.origin}/dashboard`,
+//       // callbackUrl: `${window.location.origin}`,
 //       redirect: false,
 //     });
 
@@ -20,10 +20,11 @@
 //         id: toastSignin,
 //       });
 //       router.push("/");
+//       // router.reload();
 //     }
 
 //     if (response?.error) {
-//       console.log(response);
+//       console.log("errorred", response);
 //       toast.error(`${response?.error}`, {
 //         id: toastSignin,
 //       });
@@ -45,24 +46,27 @@ function useSignin() {
   const signin = async (values) => {
     const toastSignin = toast.loading("Loading...");
 
-    const response = await signIn("credentials", {
-      ...values,
-      // callbackUrl: `${window.location.origin}`,
-      redirect: false,
-    });
-
-    if (response?.ok) {
-      console.log(response);
-      toast.success("Signin Successfull", {
-        id: toastSignin,
+    try {
+      const response = await signIn("credentials", {
+        ...values,
+        redirect: false,
       });
-      router.push("/");
-      // router.reload();
-    }
 
-    if (response?.error) {
-      console.log("errorred", response);
-      toast.error(`${response?.error}`, {
+      if (response?.ok) {
+        console.log(response);
+        toast.success("Signin Successful", {
+          id: toastSignin,
+        });
+        router.push("/");
+      } else if (response?.error) {
+        console.log("error response", response);
+        toast.error(`${response?.error}`, {
+          id: toastSignin,
+        });
+      }
+    } catch (error) {
+      console.log("error auth", error);
+      toast.error("An error occurred during signin", {
         id: toastSignin,
       });
     }
