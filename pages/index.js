@@ -17,9 +17,9 @@ function HomePage() {
     error,
   } = useGetData({ path: `/sms/today/month/total/${id}` });
 
-  console.log("allCounts", allCounts);
+  // console.log("allCounts", allCounts);
 
-  // console.log("error", error);
+  console.log("error", error);
 
   return (
     <PageWrapper

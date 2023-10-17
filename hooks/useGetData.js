@@ -24,7 +24,7 @@ function useGetData({ path }) {
   return useQuery({
     queryKey: [path],
     queryFn: fetcher,
-    enabled: !!session,
+    // enabled: !!session,
     retry: false,
   });
 }
